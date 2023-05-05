@@ -1,19 +1,24 @@
-function Menu() {
-  return null;
-}
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import DriftPage from "./components/DriftPage";
+import TimeAttackPage from "./components/TimeAttackPage";
+import ForzaPage from "./components/ForzaPage";
+import Menu from "./components/Menu";
 
 export default function App() {
   return (
-    <Router>
-      <div>
+    
+      <BrowserRouter>
         <Menu />
         <div className="page">
-          <Route path="/" exact component={HomePage} />
-          <Route path="/drift" component={DriftPage} />
-          <Route path="/timeattack" component={TimeAttackPage} />
-          <Route path="/forza" component={ForzaPage} />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/drift" element={<DriftPage />} />
+            <Route path="/timeattack" element={<TimeAttackPage />} />
+            <Route path="/forza" element={<ForzaPage />} />
+          </Routes>
         </div>
-      </div>
-    </Router>
+      </BrowserRouter>
+    
   );
 }
