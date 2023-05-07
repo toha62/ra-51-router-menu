@@ -75,6 +75,8 @@
   }
   
   .menu__item:hover {
+    text-decoration: none;
+    color: #fff;
     opacity: 1;
     border-bottom-color: hsl(60, 50%, 50%);
   }
