@@ -1,8 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
 
-export default function Menu() {
-  // const [activeIndex, setActiveIndex] = useState(0);
+export default function Menu() {  
   return (
     <nav className="menu">
       <NavLink       
