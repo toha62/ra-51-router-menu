@@ -1,38 +1,34 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function Menu() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  // const [activeIndex, setActiveIndex] = useState(0);
   return (
     <nav className="menu">
-      <Link
-        className={activeIndex === 0 ? "menu__item menu__item-active" : "menu__item"}
-        to="/"
-        onClick={() => setActiveIndex(0)}
+      <NavLink       
+        to="/"   
+        className={({ isActive }) => isActive ? "menu__item menu__item-active" : "menu__item"}     
       >
         Главная
-      </Link>
-      <Link
-        className={activeIndex === 1 ? "menu__item menu__item-active" : "menu__item"}
-        to="/drift"
-        onClick={() => setActiveIndex(1)}
+      </NavLink>
+      <NavLink        
+        to="/drift" 
+        className={({ isActive }) => isActive ? "menu__item menu__item-active" : "menu__item"}       
       >
         Дрифт-такси
-      </Link>
-      <Link
-        className={activeIndex === 2 ? "menu__item menu__item-active" : "menu__item"}
+      </NavLink>
+      <NavLink        
         to="/timeattack"
-        onClick={() => setActiveIndex(2)}
+        className={({ isActive }) => isActive ? "menu__item menu__item-active" : "menu__item"}               
       >
         Time Attack
-      </Link>
-      <Link
-        className={activeIndex === 3 ? "menu__item menu__item-active" : "menu__item"}
+      </NavLink>
+      <NavLink        
         to="/forza"
-        onClick={() => setActiveIndex(3)}
+        className={({ isActive }) => isActive ? "menu__item menu__item-active" : "menu__item"}        
       >
         Forza Karting
-      </Link>
+      </NavLink>
     </nav>
   );
 }
